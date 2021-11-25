@@ -1,0 +1,39 @@
+
+header{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,11,121,0.908000700280112) 49%, rgba(0,212,255,1) 100%);
+    
+    text-align: center;
+    padding:20px auto 20px auto;
+    color:white;
+}
+
+
+.top-container{
+    text-align: center;
+    padding-left:30px;
+    padding-top: 30px;
+}
+
+.search-container{
+    background-color: darkgray;
+    height: 500px;
+}
+
+.current-forecast{
+    position: relative;
+    background-color: darkkhaki;
+}
+.five-day-forecast{
+    position: absolute;
+    align-items: center;
+}
+
+.card-body{
+    width:100px;
+    height: 200px;
+    margin-left: 20px;
+    background-color: darkslateblue;
+    
+    
+}
