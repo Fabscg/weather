@@ -15,25 +15,38 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,11,121,0.9080007002
     padding-top: 30px;
 }
 
-.search-container{
-    background-color: darkgray;
-    height: 500px;
+.main-container{
+    border: solid 2px gray;
+    margin-bottom: 10px;
+    text-align: left;
+    padding:10px 0 10px 20px
+}
+
+
+.btn{
+    margin:10px;
+}
+form{
+    border-bottom: solid 2px gray;
 }
 
 .current-forecast{
     position: relative;
-    background-color: darkkhaki;
+   
 }
 .five-day-forecast{
     position: absolute;
-    align-items: center;
+}
+
+.cards-container{
+    text-align: left;
 }
 
 .card-body{
     width:100px;
-    height: 200px;
+    height: 250px;
     margin-left: 20px;
-    background-color: darkslateblue;
-    
-    
+    color:white;
+    background-color: #2E4C6D;
 }
+
