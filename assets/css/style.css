@@ -30,6 +30,8 @@ form{
     border-bottom: solid 2px gray;
 }
 
+
+
 .current-forecast{
     position: relative;
    
@@ -45,8 +47,10 @@ form{
 .card-body{
     width:100px;
     height: 250px;
-    margin-left: 20px;
+    margin:10px 20px 20px 20px;
     color:white;
     background-color: #2E4C6D;
+
 }
+
 
