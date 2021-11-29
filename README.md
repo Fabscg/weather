@@ -17,9 +17,9 @@
 **This last one was used for the API**
 
 
-[Github Repo]()
+[Github Repo]('git@github.com:Fabskickass/weather.git')
 
-[Github URL]()
+[Github URL](https://fabskickass.github.io/weather/)
 
 
 
