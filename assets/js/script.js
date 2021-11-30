@@ -38,11 +38,7 @@ function getCurrent(cityName) {
         })
 
 
-      if (data.current.uvi <= 3){
-         style="background-color:'green'"
-      } else{
-          console.log('Happy day');
-      }
+    
 }
 
 
@@ -56,6 +52,12 @@ function fiveDayForecast(lat, lon) {
             console.log('5 day', data)
 
             document.querySelector('#uv').textContent = 'UV: ' + data.current.uvi
+
+            if (data.current.uvi <= 3){
+                style="background-color:'green'"
+             } else{
+                 console.log('Happy day');
+             }
 
 
             for (var i = 0; i < 5; i++) {

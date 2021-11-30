@@ -21,6 +21,8 @@
 
 [Github URL](https://fabskickass.github.io/weather/)
 
+![Weather page](./assets/images/weather-shot.png)
+
 
 
 
