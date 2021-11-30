@@ -39,6 +39,15 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,11,121,0.9080007002
     justify-content: center;
 }
 
+.button-history:hover{
+    background-color: rgb(185, 182, 182);
+}
+
+.uvIndex{
+    width:50px;
+    border-radius: 5px;
+}
+
 
 .current-forecast{
     padding: 30px 50px 30px 50px;

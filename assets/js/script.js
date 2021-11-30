@@ -1,7 +1,13 @@
+
+//API from Openweather.org to get the weather information
 var API_KEY = '76334fb565ccac56bd005e0842cc18b5'
+
+//Global variables
 var searchedCity = document.querySelector('#search-bar')
 var searchBtn = document.querySelector('#search-button')
 var searchHistoryContainer = document.querySelector('#search-history')
+
+//Added eventListener to Search Button
 
 searchBtn.addEventListener('click', getCity)
 
@@ -11,6 +17,8 @@ function getCity(event) {
     getCurrent(currentCity)
     saveToStorage(currentCity)
 }
+
+//Funtion to to storage the history of the user (A city that was searched before will appeard in the screen, without the user having to type again)
 
 function saveToStorage(city) {
     var storage = JSON.parse(localStorage.getItem('weatherHistory'))
@@ -35,6 +43,8 @@ function getCurrentHistory() {
             searchHistoryContainer.append(historyBtn)
             $(historyBtn).addClass('button-history')
 
+            //Added eventListener for the history butto
+
             historyBtn.addEventListener('click', function (event) {
                 getCurrent(event.target.id)
                 
@@ -45,8 +55,10 @@ function getCurrentHistory() {
         }
     }
 }
-
+//calling the function for the search history
 getCurrentHistory()
+
+//function that fetch the API from the weather site
 
 function getCurrent(cityName) {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + API_KEY + '&units=metric')
@@ -54,6 +66,8 @@ function getCurrent(cityName) {
             return response.json()
         })
         .then(function (data) {
+
+            //varibales that define the longitude and latitude to be able to search for the daily data
 
             var lat = data.coord.lat
             var lon = data.coord.lon
@@ -68,7 +82,11 @@ function getCurrent(cityName) {
         })
 }
 
+//five day forecast function 
+
 function fiveDayForecast(lat, lon) {
+
+    //fetch the API  for daily weather using lat and lon
     fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=' + API_KEY + '&units=metric')
         .then(function (response) {
             return response.json()
@@ -76,16 +94,18 @@ function fiveDayForecast(lat, lon) {
         .then(function (data) {
             console.log('5 day', data)
 
-            document.querySelector('#uv').textContent = 'UV: ' + data.current.uvi
 
-            if (data.current.uvi <= 3) {
-                style = "background-color:'green'"
-            } else {
-                console.log('Happy day');
-            }
+            document.querySelector('#uv').textContent = 'UV: ' + data.current.uvi
+            $("#uv").addClass('uvIndex')
+            var uviIndex = document.querySelector('uvIndex')
+
+            //created a for-loop to get the weathr information from each day counting only 5 days
 
             document.querySelector('.five-days-forecast').textContent = ''
             for (var i = 0; i < 5; i++) {
+
+                // created a card to put the weather information througth the Script folder and not throught html
+                // then seeting an attribute with class name for each card and last one, append  all this to the div 'card'
 
                 var card = document.createElement('div')
                 card.setAttribute('class', 'card-body col-lg-2')
@@ -115,4 +135,4 @@ function fiveDayForecast(lat, lon) {
                 card.append(fiveDayHumidity)
             }
         })
-}
+}s
