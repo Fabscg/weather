@@ -4,9 +4,8 @@ var searchBtn = document.querySelector('#search-button')
 
 
 
-
-
 searchBtn.addEventListener('click', getCity)
+
 
 function getCity(e) {
     e.preventDefault()
@@ -25,20 +24,25 @@ function getCurrent(cityName) {
             var lon = data.coord.lon
             fiveDayForecast(lat, lon)
 
-           
             
-
 
             console.log('current', data);
 
-            var iconImage = document.querySelector('#img')
+
             document.querySelector('#city-name').textContent = data.name
             document.querySelector('#temp').textContent = 'Temp: ' + data.main.temp + ' °C'
             document.querySelector('#wind').textContent = 'Wind Speed: ' + data.wind.speed + ' MPH'
             document.querySelector('#humidity').textContent = 'Humidity: ' + data.main.humidity
-
+            
 
         })
+
+
+      if (data.current.uvi <= 3){
+         style="background-color:'green'"
+      } else{
+          console.log('Happy day');
+      }
 }
 
 
@@ -52,8 +56,8 @@ function fiveDayForecast(lat, lon) {
             console.log('5 day', data)
 
             document.querySelector('#uv').textContent = 'UV: ' + data.current.uvi
-            
-          
+
+
             for (var i = 0; i < 5; i++) {
 
                 var card = document.createElement('div')
@@ -69,7 +73,12 @@ function fiveDayForecast(lat, lon) {
                 fiveDayTemp.textContent = 'Temp: ' + data.daily[i].temp.day
                 card.append(fiveDayTemp)
 
-            
+                var iconImage = document.createElement('img')
+                var icon = data.daily[i].weather[0].icon
+                iconImage.setAttribute("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png")
+                card.append(iconImage)
+                
+                card.append(iconImage)
 
                 var fiveDayWind = document.createElement('p')
                 fiveDayWind.textContent = 'Wind: ' + data.daily[i].wind_speed + 'MPH'
@@ -79,22 +88,10 @@ function fiveDayForecast(lat, lon) {
                 fiveDayHumidity.textContent = 'Humidity:' + data.daily[i].humidity + '%'
                 card.append(fiveDayHumidity)
 
-
-
             }
         })
 
-        function getIcon(){
-            fetch( "http://openweathermap.org/img/w/" + data.daily[i].weather[0].icon + "@2x.png")
-            .then(function (response) {
-                return response.json()
-            })
-            .then(function(data){
-                console.log(getIcon);
-            })
-            
-            // var iconImage =
-            //     var icon = document.querySelector('img').setAttribute("src", iconImage)
-            //     card.append(icon)
-        }
-}
+       
+
+
+    }

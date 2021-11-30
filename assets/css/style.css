@@ -24,12 +24,10 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,11,121,0.9080007002
 
 
 .btn{
-    margin:10px;
-}
-form{
+    margin:20px;
+    width:100%;
     border-bottom: solid 2px gray;
 }
-
 
 
 .current-forecast{
@@ -46,8 +44,8 @@ form{
 
 .card-body{
     width:100px;
-    height: 250px;
-    margin:10px 20px 20px 20px;
+    height: 350px;
+    margin:10px 10px 20px 10px;
     color:white;
     background-color: #2E4C6D;
 
