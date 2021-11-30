@@ -24,15 +24,16 @@
         </header>
 
         <div class='row top-container'>
-            <div class='search-container col-lg-2 col-md-4 pb-2'>
+            <div class='search-container col-lg-2 col-md-12 pb-2'>
                 <form>
                     <h2>Search for a city:</h2>
                     <input type="text" id="search-bar"></input>
                 </form>
                 <button class='btn btn-primary btn-block' id="search-button">Search</button>
+                <div id="search-history"></div>
             </div>
 
-            <div class="current-forecast col-lg-10 col-md-4">
+            <div class="current-forecast col-lg-10">
                 <div class='main-container row'>
                     <h1 id="city-name"></h1>
                     <p id="temp"></p>
@@ -43,7 +44,8 @@
 
                 <div class='cards-container'>
                     <div class='row five-days-forecast'>
-                        
+                       
+
                     </div>
                 </div>
             </div>

@@ -24,16 +24,27 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,11,121,0.9080007002
 
 
 .btn{
-    margin:20px;
+    margin: 20px 10px 20px 10px;
     width:100%;
     border-bottom: solid 2px gray;
 }
 
+.button-history{
+    padding:10px 0 10px 0;
+    width:80%;
+    background-color: gray;
+    color:white;
+    border-radius: 5px;
+    margin-top:10px;
+    justify-content: center;
+}
+
 
 .current-forecast{
-    position: relative;
-    padding-left: 30px;
+    padding: 30px 50px 30px 50px;
     margin-right: 0;
+    width:70%;
+    margin-left:30px;
 }
 .five-day-forecast{
     position: absolute;
@@ -49,7 +60,16 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,11,121,0.9080007002
     margin:10px 10px 20px 10px;
     color:white;
     background-color: #2E4C6D;
+}
 
+
+
+@media screen and (max-width: 768px) {
+    .current-forecast{
+        padding:20px 30px 20px 30px;
+        width:100%;
+        margin-left: 0;
+    }
 }
 
 
